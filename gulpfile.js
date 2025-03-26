@@ -1,4 +1,4 @@
-import {src, dest, watch, series} from "gulp";
+import { src, dest, watch, series } from "gulp";
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
@@ -16,6 +16,7 @@ const baseDir = "docs";
 
 const paths = {
     html: `${root}/*.html`,
+    pages: `${root}/html/pages/*.html`,
     includes: `${root}/html/**/*.html`,
     scss: `${root}/scss/**/*.scss`,
     js: `${root}/js/**/*.js`,
@@ -26,9 +27,17 @@ const paths = {
 
 function html() {
     return src(paths.html)
-        .pipe(fileInclude({ prefix: "@@", basepath: "@file" }))
+        .pipe(fileInclude({ prefix: "@@", basepath: "@file", context: { base: "root" } }))
         .pipe(htmlbeautify({ indent_size: 2 }))
         .pipe(dest(baseDir))
+        .pipe(browserSync.stream());
+}
+
+function pages() {
+    return src(paths.pages)
+        .pipe(fileInclude({ prefix: "@@", basepath: "./src", context: { base: "pages" } }))
+        .pipe(htmlbeautify({ indent_size: 2 }))
+        .pipe(dest(`${baseDir}/pages`))
         .pipe(browserSync.stream());
 }
 
@@ -66,10 +75,11 @@ function serve() {
 
     watch(paths.scss, styles);
     watch([paths.html, paths.includes], html);
+    watch(paths.pages, pages);
     watch(paths.js, scripts);
     watch(paths.libs, libs);
     watch(paths.images, images);
     watch(`${baseDir}/*.html`).on("change", browserSync.reload);
 }
 
-export default series(html, styles, scripts, libs, images, serve);
+export default series(html, pages, styles, scripts, libs, images, serve);
