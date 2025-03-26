@@ -26,69 +26,146 @@
 <body>
   <div id="app">
     <div class="app-wrapper">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-dark mb-4" data-bs-theme="dark">
-        <div class="container">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <a href="#" class="sidebar-brand">
+            <img src="assets/images/svg/logo-avatar.svg" alt="Sidebar Logo">
+            HB-PMS
+          </a>
+
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <i class="bx bxs-dashboard"></i> Dashboard
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class='bx bx-chevron-down'></i> Divisions
+              </a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="divisions.html" class="nav-link"><i>R</i>Ronzac</a>
+                </li>
+                <li class="nav-item">
+                  <a href="add-division.html" class="nav-link"><i>P</i>Private Label</a>
+                </li>
+                <li class="nav-item">
+                  <a href="edit-division.html" class="nav-link"><i>D</i>DMSCO</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="bx bx-group"></i>
+                Product Specialists
+              </a>
+            </li>
+
+            <li class="nav-item sidebar-title">Tools</li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class='bx bx-message-rounded-dots'></i>
+                Chat
+                <span class="notify-msg-count">3</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class='bx bx-support'></i>
+                Support
+              </a>
+            </li>
+
+            <li class="nav-item dark-mode">
+              <a href="#" class="nav-link">
+                <i class='bx bx-moon'></i> Dark Mode
+                <div class="form-check form-switch">
+                  <input class="form-check-input toggle-switch" type="checkbox" title="Enable Dark Mode">
+                </div>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <div class="auth d-flex">
+                <div class="flex-shrink-0 me-2">
+                  <img src="https://placehold.co" alt="Image Placeholder">
+                </div>
+                <div class="flex-grow-1">
+                  <h6>Mohammed Gomma</h6>
+                  <span>Product Sp.</span>
+                </div>
+              </div>
+            </li>
+
+
+          </ul>
         </div>
-      </nav>
+      </aside>
 
-      <div class="container">
-        <h3>Hello My Friend! <i class="bx bxs-heart text-danger"></i></h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates reprehenderit itaque est
-          similique? Voluptates quod vero eum facilis. Nisi magni autem illum nihil nulla odio ducimus nostrum
-          fugit. Atque, voluptatibus.</p>
+      <div class="page-content">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Navbar</a>
 
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="d-flex align-items-center border rounded-2 p-3 bg-secondary-subtle">
-              <div class="flex-shrink-0 me-3">
-                <img src="assets/images/image.jpeg" class="rounded-2 fit" width="120" height="70" alt="Image">
-              </div>
-              <div class="flex-grow-1">
-                <h6 class="fw-semibold mb-1">A. Elsewailky</h6>
-                <span class="small">Fullstack Web Developer</span>
-              </div>
+            <!-- Toggler Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
             </div>
           </div>
-        </div>
+        </nav>
+
+        <main class="main">
+          <div class="container-fluid">
+            <h4>Page Content Text <i class="bx bxs-heart text-danger"></i> ...</h4>
+          </div>
+        </main>
+
+        <footer class="footer">
+          <p>All copyrights resaved <a href="https://github.com/ahmedelsewailky/pms.git" target="_blank" rel="noopener">
+              A.Elsewailky</a> &copy; 2025</p>
+        </footer>
       </div>
+
     </div>
   </div>
-
 
   <!-- Javascript Files, Plugins & Libraries -->
   <script src="assets/libs/jquery/jquery-3.7.1.min.js"></script>

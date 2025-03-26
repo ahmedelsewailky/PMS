@@ -11,32 +11,33 @@
 <body>
     <div id="app">
         <div class="app-wrapper">
-            <!-- Navbar -->
-            @@include('html/partials/navbar.html')
-
-            <div class="container">
-                <h3>Hello My Friend! <i class="bx bxs-heart text-danger"></i></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates reprehenderit itaque est
-                    similique? Voluptates quod vero eum facilis. Nisi magni autem illum nihil nulla odio ducimus nostrum
-                    fugit. Atque, voluptatibus.</p>
-
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="d-flex align-items-center border rounded-2 p-3 bg-secondary-subtle">
-                            <div class="flex-shrink-0 me-3">
-                                <img src="assets/images/image.jpeg" class="rounded-2 fit" width="120" height="70" alt="Image">
-                            </div>
-                            <div class="flex-grow-1">
-                                <h6 class="fw-semibold mb-1">A. Elsewailky</h6>
-                                <span class="small">Fullstack Web Developer</span>
-                            </div>
-                        </div>
-                    </div>
+            <aside class="sidebar">
+                <div class="sidebar-inner">
+                    @@include('html/partials/sidebar.html')
                 </div>
+            </aside>
+
+            <div class="page-content">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        @@include('html/partials/navbar.html')
+                    </div>
+                </nav>
+
+                <main class="main">
+                    <div class="container-fluid">
+                        <h4>Page Content Text <i class="bx bxs-heart text-danger"></i>  ...</h4>
+                    </div>
+                </main>
+
+                <footer class="footer">
+                    <p>All copyrights resaved <a href="https://github.com/ahmedelsewailky/pms.git" target="_blank" rel="noopener">
+                        A.Elsewailky</a> &copy; 2025</p>
+                </footer>
             </div>
+
         </div>
     </div>
-
 
     @@include('html/includes/script.html')
 </body>
