@@ -17,7 +17,7 @@ const baseDir = "docs";
 const paths = {
     html: `${root}/*.html`,
     pages: `${root}/html/pages/*.html`,
-    includes: `${root}/html/**/*.html`,
+    includes: `${root}/html/{includes,partials}/*.html`,
     scss: `${root}/scss/**/*.scss`,
     js: `${root}/js/**/*.js`,
     libs: `${root}/libs/**/*.*`,
