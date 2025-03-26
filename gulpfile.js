@@ -27,7 +27,7 @@ const paths = {
 
 function html() {
     return src(paths.html)
-        .pipe(fileInclude({ prefix: "@@", basepath: "@file", context: { base: "root" } }))
+        .pipe(fileInclude({ prefix: "@@", basepath: "@file", context: { base: "root", pagetitle: "Undefined" } }))
         .pipe(htmlbeautify({ indent_size: 2 }))
         .pipe(dest(baseDir))
         .pipe(browserSync.stream());
@@ -35,7 +35,7 @@ function html() {
 
 function pages() {
     return src(paths.pages)
-        .pipe(fileInclude({ prefix: "@@", basepath: "./src", context: { base: "pages" } }))
+        .pipe(fileInclude({ prefix: "@@", basepath: "./src", context: { base: "pages", pagetitle: "Undefined" } }))
         .pipe(htmlbeautify({ indent_size: 2 }))
         .pipe(dest(`${baseDir}/pages`))
         .pipe(browserSync.stream());
