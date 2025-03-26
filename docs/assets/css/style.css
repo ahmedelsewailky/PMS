@@ -1,5 +1,33 @@
+@charset "UTF-8";
 :root {
+  --bs-body-color: #141C25;
   --bs-body-font-size: 14px;
   --bs-font-sans-serif: "Nunito", "Changa", sans-serif;
+  --sidebar-width: 14rem;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: whitesmoke;
+}
+
+.page-content {
+  padding-left: var(--sidebar-width);
+  background-color: yellow;
+  height: 100vh;
+}
+
+.form-check-input {
+  width: 50px;
+  height: 25px;
+}
+
+.toggle-switch:checked {
+  background-color: #28a745 !important; /* اللون الأخضر */
+  border-color: #28a745 !important;
 }
 /*# sourceMappingURL=style.css.map */
